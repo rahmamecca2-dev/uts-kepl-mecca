@@ -4,6 +4,7 @@
 		<h2 class="mb-4">Edit Movie</h2>
         <form action="{{ route('movies.update', ['movie' => $movie->id]) }}" method="POST" enctype="multipart/form-data">
 			@csrf
+			<input type="hidden" name="id" value="{{ $movie->id }}">
 			<div class="mb-3">
 				<label for="id" class="form-label">ID Film:</label>
 				<input type="text" class="form-control" id="id" name="id" value="{{ $movie->id }}" disabled>
